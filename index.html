@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Acc</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<header class="site-header" id="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="#home" class="logo-link" aria-label="One Account Consulting home">
+      <img src="images/1.png" alt="One Account Consulting logo" class="logo">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+      <span class="hamburger"></span>
+    </button>
+
+    <nav id="mainNav" class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn nav-cta">Book Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <!-- Swiper -->
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url('images/advisor-9652579_1280.jpg')"></div>
+      <div class="swiper-slide" style="background-image:url('images/job-5382501_1280.jpg')"></div>
+      <div class="swiper-slide" style="background-image:url('images/calculator-385506_1280.jpg')"></div>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Tax One Acc Consulting</h1>
+    <p>Your Partner in Smart Financial Solutions</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        At <strong>Tax One Acc Consulting</strong>, we provide strategic financial solutions 
+        that empower businesses to grow with confidence. Our approach blends 
+        expertise, innovation, and integrity — ensuring your success is our 
+        priority.
+      </p>
+
+      <div class="about-mission">
+        <h3>Our Mission</h3>
+        <p>
+          To deliver innovative accounting services that empower businesses 
+          with financial clarity and long-term sustainability.
+        </p>
+      </div>
+
+      <div class="about-vision">
+        <h3>Our Vision</h3>
+        <p>
+          To be the most trusted partner in financial excellence, recognized 
+          for our integrity, expertise, and commitment to client success.
+        </p>
+      </div>
+
+      <div class="about-values">
+        <h3>Our Core Values</h3>
+        <ul>
+          <li>Integrity</li>
+          <li>Excellence</li>
+          <li>Client-Centricity</li>
+          <li>Innovation</li>
+        </ul>
+      </div>
+
+      <a href="#contact" class="btn">Schedule a Consultation</a>
+    </div>
+
+    <div class="about-image">
+      <img src="images/job-5382501_1280.jpg" alt="Our consulting team">
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services Section ===== -->
+<section id="services" class="services-section">
+  <div class="container services-layout">
+    
+    <!-- Side Navigation -->
+    <aside class="services-sidebar">
+      <div class="sidebar-card">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#taxation" class="service-link active">Individual Taxation</a></li>
+          <li><a href="#advisory" class="service-link">Business Advisory</a></li>
+          <li><a href="#accounting" class="service-link">Accounting & Bookkeeping</a></li>
+          <li><a href="#payroll" class="service-link">Payroll Management</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Service Details -->
+    <div class="services-content">
+
+      <!-- Service 1 -->
+      <div id="taxation" class="service-detail active">
+        <h2>Individual Taxation</h2>
+        <p>We simplify tax compliance for individuals, ensuring accurate filing, maximum refunds, and peace of mind.</p>
+        <ul>
+          <li>Tax return preparation and submission</li>
+          <li>Tax planning for individuals</li>
+          <li>Assistance with SARS queries and audits</li>
+        </ul>
+
+        <!-- FAQs -->
+        <div class="faqs">
+          <h3>FAQs</h3>
+          <div class="faq">
+            <button class="faq-question">When should I file my tax return?</button>
+            <div class="faq-answer">Tax season typically runs from July to November. Filing early helps avoid penalties.</div>
+          </div>
+          <div class="faq">
+            <button class="faq-question">Can you assist with SARS audits?</button>
+            <div class="faq-answer">Yes, we provide full support in handling queries, documentation, and SARS audits.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div id="advisory" class="service-detail">
+        <h2>Business Advisory</h2>
+        <p>Our business advisory services provide actionable insights and strategic solutions tailored to your company’s needs.</p>
+        <ul>
+          <li>Business growth strategies</li>
+          <li>Financial forecasting and planning</li>
+          <li>Compliance and risk management</li>
+        </ul>
+
+        <div class="faqs">
+          <h3>FAQs</h3>
+          <div class="faq">
+            <button class="faq-question">What size of businesses do you work with?</button>
+            <div class="faq-answer">We assist startups, SMEs, and established corporations across multiple industries.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div id="accounting" class="service-detail">
+        <h2>Accounting & Bookkeeping</h2>
+        <p>We manage your financial records with accuracy and reliability so you can focus on growing your business.</p>
+        <ul>
+          <li>Monthly bookkeeping and reconciliations</li>
+          <li>Preparation of financial statements</li>
+          <li>Cash flow and budget management</li>
+        </ul>
+
+        <div class="faqs">
+          <h3>FAQs</h3>
+          <div class="faq">
+            <button class="faq-question">Do you work with cloud accounting software?</button>
+            <div class="faq-answer">Yes, we use tools like Xero, Sage, and QuickBooks for efficient bookkeeping.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div id="payroll" class="service-detail">
+        <h2>Payroll Management</h2>
+        <p>Hassle-free payroll services that guarantee timely payments and full compliance with statutory regulations.</p>
+        <ul>
+          <li>Employee salary processing</li>
+          <li>Pension and benefit administration</li>
+          <li>PAYE, UIF, and SDL compliance</li>
+        </ul>
+
+        <div class="faqs">
+          <h3>FAQs</h3>
+          <div class="faq">
+            <button class="faq-question">Can you handle payroll for large teams?</button>
+            <div class="faq-answer">Absolutely, our systems scale to support teams of any size while ensuring compliance.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container contact-container">
+
+    <!-- Request Quote Form -->
+    <div class="contact-form">
+      <h2>Request a Quote</h2>
+      <form action="#" method="POST" class="quote-form">
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="tax-consulting">Tax Consulting</option>
+          <option value="accounting-services">Accounting Services</option>
+          <option value="financial-planning">Financial Planning</option>
+          <option value="business-consulting">Business Consulting</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-overlay"></div>
+  <div class="footer-container">
+    
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h3>Tax One Acc Consulting</h3>
+      <p>Your Partner in Smart Financial Solutions</p>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-services">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#tax">Tax Consulting</a></li>
+        <li><a href="#accounting">Accounting</a></li>
+        <li><a href="#payroll">Payroll</a></li>
+        <li><a href="#advisory">Business Advisory</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <p><i class="fas fa-phone"></i> +27 12 345 6789</p>
+      <p><i class="fas fa-envelope"></i> info@taxoneacc.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Johannesburg</p>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Tax One Acc Consulting. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
