@@ -25,13 +25,10 @@ The website is built with **HTML, CSS, and JavaScript**, following premium UX/UI
 - **Font Awesome** 
 
 ---
-
-## project structure
+## 📂 Project Structure
 .
 ├── index.html # Main HTML file
 ├── style.css # Stylesheet
 ├── script.js # JavaScript functionality
 ├── images/ # Project images & logos
 └── README.md # Project documentation
-
-## 📂 Project Structure
