@@ -50,27 +50,59 @@ document.addEventListener('DOMContentLoaded', function () {
   document.documentElement.style.scrollBehavior = 'smooth';
 });
 
-// Sidebar service switching
-document.querySelectorAll(".service-link").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
+// Wait until DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // === SERVICE NAVIGATION ===
+  const serviceLinks = document.querySelectorAll(".service-link");
+  const serviceDetails = document.querySelectorAll(".service-detail");
 
-    // remove active from all
-    document.querySelectorAll(".service-link").forEach(l => l.classList.remove("active"));
-    document.querySelectorAll(".service-detail").forEach(s => s.classList.remove("active"));
+  serviceLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    // add active to clicked link and matching section
-    link.classList.add("active");
-    const target = document.querySelector(link.getAttribute("href"));
-    target.classList.add("active");
+      // Remove active class from all links
+      serviceLinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+
+      // Hide all service details
+      serviceDetails.forEach(detail => detail.classList.remove("active"));
+
+      // Show the clicked one
+      const targetId = this.getAttribute("href").substring(1); // remove #
+      const targetDetail = document.getElementById(targetId);
+      if (targetDetail) {
+        targetDetail.classList.add("active");
+        targetDetail.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   });
-});
 
-// FAQ toggle
-document.querySelectorAll(".faq-question").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const faq = btn.parentElement;
-    faq.classList.toggle("open");
+  // === FAQ ACCORDION ===
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach(question => {
+    question.addEventListener("click", function () {
+      const answer = this.nextElementSibling;
+
+      // Toggle answer visibility
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        this.classList.remove("open");
+      } else {
+        // Close all other FAQs in the same service
+        const parent = this.closest(".faqs");
+        parent.querySelectorAll(".faq-answer").forEach(ans => {
+          ans.style.maxHeight = null;
+        });
+        parent.querySelectorAll(".faq-question").forEach(q => {
+          q.classList.remove("open");
+        });
+
+        // Open current
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        this.classList.add("open");
+      }
+    });
   });
 });
 
