@@ -528,25 +528,24 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
    Contact Section
    -------------------- */
 .contact-form {
-  max-width: 500px;      
-  margin: 80px;          
-  padding: 20px;           
-  background-color: #333131;  
+  max-width: 100%;      
+  margin: 10px;          
+  padding: 50px;           
+  background-color: #fff;  
   border-radius: 12px;     
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
-  gap: 15px;  
-  align-items: center;             
+  gap: 15px;               
 }
 
 .contact-form h2 {
-  color: #3889f3;          /* blue heading */
+  color: #3889f3;          
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* Optional: style the inputs nicely inside the box */
+
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -583,6 +582,30 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   background-color: #000;
 }
 
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 15px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+/* --------------------
+   Footer
+   -------------------- */
 .site-footer {
   position: relative;
   background: url("images/calculator-385506_1280.jpg") center/cover no-repeat;
