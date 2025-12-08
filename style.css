@@ -13,13 +13,20 @@
   backdrop-filter: blur(6px);
 }
 
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 /* container used elsewhere; if you don't have it, keep same .container rules */
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 18px 24px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
 }
 
@@ -32,7 +39,6 @@
 
 /* nav */
 .main-nav {
-  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -80,7 +86,9 @@
   background: transparent;
   border: 0;
   cursor: pointer;
-  margin-left: 12px;
+  margin-left: auto;
+  margin-right: 0.8rem;
+  padding: 8px;
 }
 .hamburger {
   width: 24px;
@@ -111,23 +119,27 @@
 
 /* Mobile nav panel (hidden by default) */
 @media (max-width: 900px) {
+  .header-inner {
+    padding: 18px 16px;
+  }
+
   .nav-toggle { display: block; }
   .main-nav { 
     position: fixed;
-    right: 18px;
+    right: 12px;
     top: 72px;
-    background: rgba(0,0,0,0.9);
-    padding: 18px;
+    background: rgba(0,0,0,0.95);
+    padding: 20px;
     border-radius: 12px;
     display: none;
     flex-direction: column;
-    gap: 10px;
-    min-width: 200px;
+    gap: 12px;
+    min-width: 220px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.4);
   }
   .site-header.open .main-nav { display: flex; }
-  .nav-list { flex-direction: column; gap: 10px; }
-  .nav-cta { align-self: stretch; text-align:center; }
+  .nav-list { flex-direction: column; gap: 12px; }
+  .nav-cta { align-self: stretch; text-align:center; margin-left: 0; }
 }
 
 /* scrolled state: change background to solid + subtle shadow */
@@ -139,10 +151,26 @@
 /* prevent anchor sections from hiding under fixed header */
 section { scroll-margin-top: 88px; } /* adjust if header height changes */
 
+/* Global container class */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /* ensure hero is not hidden behind nav (if hero is full height) */
 .hero { /* if you used hero earlier */
   min-height: 100vh;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 /* Hero container */
@@ -152,6 +180,8 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   width: 100%;
   font-family: 'Poppins', sans-serif;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
 /* Ensure swiper fills hero */
@@ -196,6 +226,18 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero { min-height: 70vh; }
 }
 
 .btn {
@@ -277,6 +319,20 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.2rem;
+  }
+}
+
 .about-values ul {
   list-style: disc;
   padding-left: 1.5rem;
@@ -320,6 +376,7 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
 .services-section {
   background: #f9f9f9;
   padding: 80px 20px;
+  overflow-x: hidden;
 }
 
 /* Layout: sidebar + content */
@@ -328,6 +385,9 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   gap: 40px;
   align-items: flex-start;
   margin-bottom: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------------- Sidebar ---------------- */
@@ -515,12 +575,30 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 768px) {
+  .services-section {
+    padding: 40px 0;
+  }
+
   .services-layout {
     flex-direction: column;
+    padding: 0 16px;
   }
+
   .services-sidebar {
     max-width: 100%;
     margin-bottom: 30px;
+  }
+
+  .service-detail h2 {
+    font-size: 1.3rem;
+  }
+
+  .service-detail p {
+    padding: 15px;
+  }
+
+  .service-detail ul {
+    padding: 0 20px 15px 35px;
   }
 }
 
@@ -584,7 +662,8 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
 
 @media (max-width: 600px) {
   .contact-form {
-    padding: 15px;
+    padding: 20px;
+    margin: 0;
   }
 
   .contact-form h2 {
@@ -595,7 +674,7 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   .contact-form select,
   .contact-form textarea {
     font-size: 0.95rem;
-    padding: 10px;
+    padding: 12px;
   }
 
   .contact-form button {
@@ -611,6 +690,7 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   background: url("images/calculator-385506_1280.jpg") center/cover no-repeat;
   color: #fff;
   padding: 4rem 2rem 2rem;
+  overflow-x: hidden;
 }
 
 .footer-overlay {
@@ -686,4 +766,22 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   margin-top: 2rem;
   padding-top: 1rem;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-brand h3,
+  .footer-services h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 1rem;
+  }
 }
