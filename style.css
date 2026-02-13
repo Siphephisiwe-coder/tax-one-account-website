@@ -20,6 +20,24 @@ html, body {
   padding: 0;
 }
 
+.demo-ribbon {
+  width: 150px;
+  background: #f39c12; /* Warning orange or a professional blue */
+  position: absolute;
+  top: 25px;
+  right: -40px;
+  text-align: center;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(45deg);
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
 /* container used elsewhere; if you don't have it, keep same .container rules */
 .header-inner {
   width: 100%;
@@ -806,6 +824,51 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   color: #3889f3;
 }
 
+.dev-note-box {
+  /* --- NEW FIXES START --- */
+  position: relative; /* Necessary for z-index to work */
+  z-index: 999;       /* High number to "punch" through the footer overlay */
+  /* --- NEW FIXES END --- */
+
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: white; /* This will now look bright white, not dimmed */
+  padding: 15px 25px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly stronger shadow to show it's "hovering" over the overlay */
+}
+
+.dev-icon {
+  font-size: 1.2rem;
+}
+
+.dev-note-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1e293b; /* Darkened slightly to ensure contrast against white */
+  line-height: 1.5;
+  text-align: left;
+}
+
+.dev-note-box strong {
+  color: #0f172a;
+}
+
+/* Mobile responsive tweak */
+@media (max-width: 600px) {
+  .dev-note-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dev-note-box p {
+    text-align: center;
+  }
+}
 .footer-bottom {
   position: relative;
   z-index: 2;
