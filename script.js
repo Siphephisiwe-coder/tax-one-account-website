@@ -50,6 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
   document.documentElement.style.scrollBehavior = 'smooth';
 });
 
+// SLIDE-IN ANIMATIONS - About Section
+const slideElements = document.querySelectorAll('.slide-left, .slide-right');
+
+const slideObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('slide-in');
+    }
+  });
+}, {threshold: 0.2});
+
+slideElements.forEach(el => slideObserver.observe(el));
+
 // Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // === SERVICE NAVIGATION ===

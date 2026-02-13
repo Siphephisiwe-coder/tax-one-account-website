@@ -42,6 +42,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 20px;
+  height: 3.5rem;
 }
 
 .nav-list {
@@ -273,45 +274,52 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
 }
 
 /* --------------------
-   About Section
-   -------------------- */
+   About Section Zig-Zag
+-------------------- */
 .about {
-  background: #f9f9f9; /* light grey for contrast */
+  background: #f9f9f9;
   color: #333;
   font-family: 'Poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 4rem 2rem;
 }
 
 .about-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.about-text {
+/* Zig-zag rows */
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Text and image each take ~50% */
+.about-text, .about-image {
   flex: 1;
-  min-width: 300px;
+  max-width: 48%;
 }
 
 .about-text h2 {
   font-size: 2.5rem;
-  color: #3889f3; 
+  color: #3889f3;
   margin-bottom: 1rem;
 }
 
 .about-text h3 {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-  color: #222;
+  font-size: 1.8rem;
+  color: #3889f3;
+  margin-bottom: 1rem;
 }
 
 .about-text p {
@@ -319,9 +327,82 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   margin-bottom: 1rem;
 }
 
+.highlight {
+  font-style: italic;
+  color: #3889f3;
+}
+
+/* Core values list */
+.about-text ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.about-text li {
+  margin-bottom: 0.5rem;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Images and icons */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img, .icon-large {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Large icons for Mission/Values */
+.icon-large {
+  width: 150px;
+  height: 150px;
+}
+
+/* --------------------
+   Scroll Animations
+-------------------- */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.slide-in {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+
+/* --------------------
+   Responsive
+-------------------- */
 @media (max-width: 768px) {
-  .about {
-    padding: 2rem 1rem;
+  .about-row, .about-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text, .about-image {
+    max-width: 100%;
+  }
+
+  .about-image img, .icon-large {
+    max-width: 200px;
+    margin: 0 auto;
   }
 
   .about-text h2 {
@@ -329,47 +410,14 @@ section { scroll-margin-top: 88px; } /* adjust if header height changes */
   }
 
   .about-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
-.about-values ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.about-values li {
-  margin-bottom: 0.5rem;
-  color: #444;
-  font-weight: 500;
-}
-
-
-.about-image {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
-  .about {
-    grid-template-columns: 1fr; /* stack on mobile */
-    text-align: center;
-  }
-
-  .about-content {
-    text-align: center; /* center text for mobile */
-  }
-
-  .about img {
-    margin-bottom: 1.5rem;
-  }
+/* Default: all headings left-aligned */
+.about-text h2,
+.about-text h3 {
+  text-align: left;
 }
 
 /* ================= Services Section ================= */
